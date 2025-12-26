@@ -1,0 +1,22 @@
+@use "sass:color";
+
+.nav {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+
+  a {
+    text-decoration: none;
+    font-weight: 500;
+    color: #6366f1;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &.router-link-active {
+      font-weight: 700;
+      color: #1014f2;
+    }
+  }
+}

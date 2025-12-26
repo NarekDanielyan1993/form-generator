@@ -1,0 +1,7 @@
+@use "@/styles/variables" as *;
+
+.product-form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: $radius-md;
+}

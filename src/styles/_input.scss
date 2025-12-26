@@ -1,0 +1,43 @@
+@use "@/styles/variables" as *;
+
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: $spacing-md;
+
+  &__label {
+    font-weight: 500;
+    margin-bottom: $spacing-sm;
+    color: $text-secondary;
+    font-size: $font-size-md;
+  }
+
+  &__input {
+    padding: $spacing-sm;
+    border-radius: $radius-md;
+    border: 1px solid $border-color;
+    font-size: $font-size-md;
+    outline: none;
+    background: $background;
+
+    &:focus {
+      outline: none;
+      border-color: $primary-color;
+      box-shadow: 0 0 0 2px $shadow-focus;
+    }
+
+    &--error {
+      border-color: $color-danger;
+
+      &:focus {
+        border-color: $color-danger;
+        box-shadow: 0 0 0 2px rgba($color-danger, 0.2);
+      }
+    }
+
+    &:disabled {
+      background: $background-disabled;
+      cursor: not-allowed;
+    }
+  }
+}

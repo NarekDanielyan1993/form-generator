@@ -1,0 +1,29 @@
+@use "@/styles/variables" as *;
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  font-size: $font-size-md;
+  color: $text-primary;
+  cursor: pointer;
+
+  input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    border-radius: $radius-sm;
+    border: 1px solid $border-color;
+    accent-color: $primary-color;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+      box-shadow: $shadow-focus;
+    }
+
+    &:disabled {
+      background: $background-disabled;
+      cursor: not-allowed;
+    }
+  }
+}

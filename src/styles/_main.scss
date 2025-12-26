@@ -1,0 +1,16 @@
+@import "normalize.css/normalize";
+@use "./variables" as *;
+
+:root {
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  color: $text-color;
+  background: $background;
+}

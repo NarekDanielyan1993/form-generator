@@ -1,0 +1,33 @@
+@use "@/styles/variables" as *;
+
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: $spacing-md;
+
+  &__label {
+    font-weight: 500;
+    margin-bottom: $spacing-sm;
+    color: $text-secondary;
+    font-size: $font-size-md;
+  }
+
+  &__select {
+    padding: $spacing-sm;
+    border-radius: $radius-md;
+    border: 1px solid $border-color;
+    font-size: $font-size-md;
+    background: $background;
+    outline: none;
+
+    &:focus {
+      border-color: $primary-color;
+      box-shadow: $shadow-focus;
+    }
+
+    &:disabled {
+      background: $background-disabled;
+      cursor: not-allowed;
+    }
+  }
+}

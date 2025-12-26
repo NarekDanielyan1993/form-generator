@@ -1,0 +1,8 @@
+@use "@/styles/variables" as *;
+
+.user-form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: $spacing-lg;
+  border-radius: $radius-md;
+}
