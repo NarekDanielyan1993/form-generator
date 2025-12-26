@@ -6,7 +6,7 @@ Installation
 
 Clone the repository:
 
-git clone <your-repo-url>
+git clone git@github.com:NarekDanielyan1993/form-generator.git
 cd vue-form-generator
 
 Install dependencies:

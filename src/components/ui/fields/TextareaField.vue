@@ -6,7 +6,7 @@
       :class="{ 'field__textarea--error': error }"
       class="field__textarea"
       v-bind="attrs"
-      v-model="value as string"
+      v-model="value"
     />
     <ErrorMessage v-if="error" class="field__error">{{ error }}</ErrorMessage>
   </div>
@@ -22,7 +22,7 @@ const attrs = useAttrs();
 
 const props = defineProps<BaseField>();
 
-const { value } = useField(props.name);
+const { value } = useField<string>(props.name);
 </script>
 
 <style scoped lang="scss">
