@@ -6,26 +6,25 @@
 
     <input
       class="field__input"
-      :class="{ 'field__input--error': error }"
+      :class="{ 'field__input--error': errorMessage }"
       v-model="value"
-      :placeholder="placeholder"
+      v-bind="attrs"
     />
 
-    <span v-if="error" class="field__error">{{ error }}</span>
+    <span v-if="errorMessage" class="field__error">{{ errorMessage }}</span>
   </div>
 </template>
 
 <script setup lang="ts">
+import type { BaseField } from "@/types/fields";
 import { useField } from "vee-validate";
+import { useAttrs } from "vue";
 
-const props = defineProps<{
-  label?: string;
-  error?: string;
-  name: string;
-  placeholder?: string;
-}>();
+const { name, label } = defineProps<BaseField>();
 
-const { value } = useField(props.name);
+const attrs = useAttrs();
+
+const { value, errorMessage } = useField(name);
 </script>
 
 <style scoped lang="scss">

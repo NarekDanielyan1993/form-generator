@@ -10,16 +10,16 @@
 </template>
 
 <script setup lang="ts">
-import type { BaseField, SelectFieldProps } from "@/types/fields";
+import type { BaseField, SelectOption } from "@/types/fields";
 import { useField } from "vee-validate";
 import { useAttrs } from "vue";
 
 const { options: opts, ...attrs } = useAttrs();
+const options = opts as SelectOption[];
 
-const props = defineProps<BaseField>();
-const options = opts as SelectFieldProps["options"];
+const { name, label } = defineProps<BaseField>();
 
-const { value } = useField(props.name);
+const { value } = useField(name);
 </script>
 
 <style scoped lang="scss">

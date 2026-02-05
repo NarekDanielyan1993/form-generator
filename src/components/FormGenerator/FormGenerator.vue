@@ -4,19 +4,10 @@
       <slot
         v-if="$slots[`field-${field.name}`]"
         :name="`field-${field.name}`"
-        v-bind="field"
-        :inputType="field.inputType"
-        :error="errors[field.name]"
+        :field="field"
       />
 
-      <component
-        v-else
-        :is="getComponent(field.inputType)"
-        v-bind="field"
-        :inputType="field.inputType"
-        :error="errors[field.name]"
-        :name="field.name"
-      />
+      <component v-else :is="getComponent(field.inputType)" v-bind="field" />
     </div>
 
     <div class="form__actions">
@@ -48,7 +39,7 @@ const props = defineProps<{
 
 const emit = defineEmits(["submit", "cancel"]);
 
-const { handleSubmit, errors, resetForm, meta } = useFormGenerator({
+const { handleSubmit, resetForm, meta } = useFormGenerator({
   validationSchema: props.validationSchema,
   initialValues: model,
 });

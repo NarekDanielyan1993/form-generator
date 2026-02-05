@@ -20,8 +20,17 @@ export const USER_FIELDS: FormField[] = [
 ];
 
 export const PRODUCT_FIELDS: FormField[] = [
-  { name: "title", inputType: "input", label: "Product Title" },
-  { name: "price", inputType: "input", label: "Price" },
+  {
+    name: "title",
+    inputType: "input",
+    label: "Product Title",
+    placeholder: "Enter product title",
+  },
+  {
+    name: "price",
+    inputType: "input",
+    label: "Price",
+  },
   {
     name: "description",
     inputType: "textarea",
@@ -29,12 +38,12 @@ export const PRODUCT_FIELDS: FormField[] = [
   },
   {
     name: "category",
-    inputType: "select",
-    label: "Category",
     options: [
       { label: "Electronics", value: "electronics" },
       { label: "Clothing", value: "clothing" },
       { label: "Books", value: "books" },
     ],
+    inputType: "select",
+    label: "Category",
   },
 ];

@@ -3,12 +3,14 @@
     <label :for="label" class="field__label">{{ label }}</label>
     <textarea
       :id="label"
-      :class="{ 'field__textarea--error': error }"
+      :class="{ 'field__textarea--error': errorMessage }"
       class="field__textarea"
       v-bind="attrs"
       v-model="value"
     />
-    <ErrorMessage v-if="error" class="field__error">{{ error }}</ErrorMessage>
+    <ErrorMessage v-if="errorMessage" class="field__error">{{
+      errorMessage
+    }}</ErrorMessage>
   </div>
 </template>
 
@@ -20,9 +22,9 @@ import { useAttrs } from "vue";
 
 const attrs = useAttrs();
 
-const props = defineProps<BaseField>();
+const { label, name } = defineProps<BaseField>();
 
-const { value } = useField<string>(props.name);
+const { value, errorMessage } = useField<string>(name);
 </script>
 
 <style scoped lang="scss">

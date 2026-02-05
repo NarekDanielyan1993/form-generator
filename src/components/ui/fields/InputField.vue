@@ -6,11 +6,13 @@
       :name="name"
       type="text"
       class="field__input"
-      :class="{ 'field__input--error': error }"
+      :class="{ 'field__input--error': errorMessage }"
       v-bind="attrs"
       v-model="value"
     />
-    <ErrorMessage v-if="error" class="field__error">{{ error }}</ErrorMessage>
+    <ErrorMessage v-if="errorMessage" class="field__error">{{
+      errorMessage
+    }}</ErrorMessage>
   </div>
 </template>
 
@@ -22,9 +24,9 @@ import { useAttrs } from "vue";
 
 const attrs = useAttrs();
 
-const props = defineProps<BaseField>();
+const { name, label } = defineProps<BaseField>();
 
-const { value } = useField(props.name);
+const { value, errorMessage } = useField(name);
 </script>
 
 <style scoped lang="scss">

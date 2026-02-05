@@ -8,13 +8,8 @@
       @submit="submit"
       @cancel="cancel"
     >
-      <template #field-title="{ name, error }">
-        <CustomInput
-          label="Product Title (Custom)"
-          :error="error"
-          :name="name"
-          placeholder="Enter product title"
-        />
+      <template #field-title="{ field }">
+        <CustomInput label="Product Title (Custom)" v-bind="field" />
       </template>
     </FormGenerator>
   </div>

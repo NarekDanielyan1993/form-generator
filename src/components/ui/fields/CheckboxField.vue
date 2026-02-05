@@ -3,7 +3,9 @@
     <input v-bind="attrs" type="checkbox" v-model="value" />
     {{ label }}
   </label>
-  <ErrorMessage v-if="error" class="field__error">{{ error }}</ErrorMessage>
+  <ErrorMessage v-if="errorMessage" class="field__error">{{
+    errorMessage
+  }}</ErrorMessage>
 </template>
 
 <script setup lang="ts">
@@ -14,9 +16,9 @@ import { useAttrs } from "vue";
 
 const attrs = useAttrs();
 
-const props = defineProps<BaseField>();
+const { name, label } = defineProps<BaseField>();
 
-const { value } = useField(props.name);
+const { value, errorMessage } = useField(name);
 </script>
 
 <style scoped lang="scss">
